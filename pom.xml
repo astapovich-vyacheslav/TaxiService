@@ -35,15 +35,18 @@
             <version>8.0.31</version>
         </dependency>
 
+        <!-- API, java.xml.bind module -->
         <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>2.3.1</version>
+            <groupId>jakarta.xml.bind</groupId>
+            <artifactId>jakarta.xml.bind-api</artifactId>
+            <version>3.0.1</version>
         </dependency>
+
+        <!-- Runtime, com.sun.xml.bind module -->
         <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>3.0.0</version>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>3.0.2</version>
         </dependency>
     </dependencies>
 
@@ -52,17 +55,24 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>2.5.0</version>
+                <version>2.3</version>
                 <executions>
                     <execution>
-                        <id>xsd-to-java</id>
+                        <id>xjc</id>
                         <goals>
                             <goal>xjc</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <packageName>com.solvd.taxiservices</packageName>
+                    <xjbSources>
+                        <xjbSource>src/main/resources/global.xjb</xjbSource>
+                    </xjbSources>
+                    <sources>
+                        <source>src/main/resources/car.xsd</source>
+                    </sources>
+                    <outputDirectory>${basedir}/src/main/java</outputDirectory>
+                    <clearOutputDir>false</clearOutputDir>
                 </configuration>
             </plugin>
         </plugins>

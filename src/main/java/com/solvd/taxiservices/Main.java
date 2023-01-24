@@ -11,7 +11,10 @@ import com.solvd.taxiservices.utils.JDBC.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -200,13 +203,18 @@ public class Main {
                     System.out.println("enter car id");
                     int id = scanner.nextByte();
                     Car carToFile = carDao.getById(id);
+                    try {
+                        Date date = new SimpleDateFormat("dd-MM-yyyy").parse("20-11-2002");
+                        carToFile.setDateOfAcquirement(date);
+                    } catch (ParseException ignored) {}
+                    carToFile.setClientsInCar(clientDao.getAll());
                     serializer.serialize(carToFile, "serialization.xml");
                     break;
                 //deserialize
                 case 8:
                     Car carFromFile = new Car();
-                    Serializer.deserialize(carFromFile, "serialization.xml");
-                    System.out.println(carFromFile);
+                    carFromFile = Serializer.deserialize(carFromFile, "serialization.xml");
+                    System.out.println(carFromFile.fullInfo());
                     break;
             }
         } while (choice != 0);

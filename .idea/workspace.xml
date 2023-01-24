@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03b827dc-00cb-492a-bf06-ed8caa5d7fcc" name="Changes" comment="updated hierarchy, added daos">
+    <list default="true" id="03b827dc-00cb-492a-bf06-ed8caa5d7fcc" name="Changes" comment="added xonnection pool">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/taxiservices/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/taxiservices/Main.java" afterDir="false" />
@@ -37,24 +37,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.solvd.taxiservices.models.vehicles" />
@@ -73,6 +73,7 @@
       <updated>1673898813416</updated>
       <workItem from="1673898815838" duration="17300000" />
       <workItem from="1674166474417" duration="36989000" />
+      <workItem from="1674528267933" duration="4522000" />
     </task>
     <task id="LOCAL-00001" summary="updated hierarchy, added daos">
       <created>1674136696476</created>
@@ -81,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674136696476</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added xonnection pool">
+      <created>1674528509064</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674528509064</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +108,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated hierarchy, added daos" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated hierarchy, added daos" />
+    <MESSAGE value="added xonnection pool" />
+    <option name="LAST_COMMIT_MESSAGE" value="added xonnection pool" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -111,7 +120,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/solvd/taxiservices/utils/Serializer.java</url>
-          <line>15</line>
+          <line>12</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
