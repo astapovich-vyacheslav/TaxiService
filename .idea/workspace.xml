@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="03b827dc-00cb-492a-bf06-ed8caa5d7fcc" name="Changes" comment="added xonnection pool">
+    <list default="true" id="03b827dc-00cb-492a-bf06-ed8caa5d7fcc" name="Changes" comment="added jaxb for cars">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/solvd/taxiservices/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/solvd/taxiservices/Main.java" afterDir="false" />
@@ -17,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -43,6 +43,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/JavaTestAutomation/examples-for-laba-master&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -63,6 +64,26 @@
       <recent name="D:\JavaTestAutomation\taxiservice\taxiservice\src\main\resources" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.solvd.taxiservices.Main" />
+      <module name="taxiservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solvd.taxiservices.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +94,14 @@
       <updated>1673898813416</updated>
       <workItem from="1673898815838" duration="17300000" />
       <workItem from="1674166474417" duration="36989000" />
-      <workItem from="1674528267933" duration="4522000" />
+      <workItem from="1674528267933" duration="5167000" />
+      <workItem from="1674776684890" duration="9721000" />
+      <workItem from="1674826575967" duration="12670000" />
+      <workItem from="1675425919799" duration="9248000" />
+      <workItem from="1675941653218" duration="39000" />
+      <workItem from="1675941940855" duration="857000" />
+      <workItem from="1675943661450" duration="356000" />
+      <workItem from="1676208797192" duration="9002000" />
     </task>
     <task id="LOCAL-00001" summary="updated hierarchy, added daos">
       <created>1674136696476</created>
@@ -89,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674528509064</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added jaxb for cars">
+      <created>1674532819107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674532819107</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,22 +144,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated hierarchy, added daos" />
     <MESSAGE value="added xonnection pool" />
-    <option name="LAST_COMMIT_MESSAGE" value="added xonnection pool" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
-          <option name="timeStamp" value="13" />
-        </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/solvd/taxiservices/utils/Serializer.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="added jaxb for cars" />
+    <option name="LAST_COMMIT_MESSAGE" value="added jaxb for cars" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -7,8 +7,13 @@ import com.solvd.taxiservices.models.people.Operator;
 import com.solvd.taxiservices.models.vehicles.Car;
 import com.solvd.taxiservices.services.CarDao;
 import com.solvd.taxiservices.services.ClientDao;
+import com.solvd.taxiservices.services.carFactory.CarInfoFactory;
+import com.solvd.taxiservices.services.carFactory.ICarInfo;
 import com.solvd.taxiservices.utils.JDBC.jdbc;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -22,9 +27,19 @@ import com.solvd.taxiservices.utils.JDBC.jdbc;
 import com.solvd.taxiservices.utils.ListPrinter;
 import com.solvd.taxiservices.utils.MenuPrinter;
 import com.solvd.taxiservices.utils.Serializer;
+import org.apache.commons.io.FileUtils;
+
 
 public class Main {
     public static void main(String[] args) {
+
+//        try {
+//            String content = FileUtils.readFileToString(new File("src\\main\\resources\\mybatis-config.xml"), StandardCharsets.UTF_8);
+//            System.out.println(content);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+
         jdbc.connect();
         ArrayList<Order> orders = new ArrayList<>();
         ArrayList<Client> clients = new ArrayList<>();
@@ -190,7 +205,15 @@ public class Main {
                         case 4: {
                             System.out.println("enter id");
                             int id = scanner.nextByte();
-                            System.out.println(carDao.getById(id).toString());
+                            try {
+                            Car carToPrint = carDao.getById(id);
+                            System.out.println(carToPrint.toString());
+                            CarInfoFactory carInfoFactory = new CarInfoFactory();
+                            ICarInfo carInfo = carInfoFactory.getCarInfo(carToPrint.getModel());
+
+                                carInfo.printInfo();
+                            }
+                            catch (Exception ignored) {}
                         }
                             break;
                     }
@@ -208,12 +231,17 @@ public class Main {
                         carToFile.setDateOfAcquirement(date);
                     } catch (ParseException ignored) {}
                     carToFile.setClientsInCar(clientDao.getAll());
-                    serializer.serialize(carToFile, "serialization.xml");
+                    //Serializer.serialize(carToFile, "serialization.xml");
+                    Serializer.serializeJSON(carToFile, "json.txt");
+                    //Serializer.serializeStAX(carToFile, "serialization.xml");
                     break;
                 //deserialize
                 case 8:
                     Car carFromFile = new Car();
-                    carFromFile = Serializer.deserialize(carFromFile, "serialization.xml");
+                    //carFromFile = Serializer.deserialize(carFromFile, "serialization.xml");
+                    //carFromFile = Serializer.deserializeSAX("serialization.xml");
+                    //carFromFile = Serializer.deserializeStAX("serialization.xml");
+                    carFromFile = Serializer.deserializeJSON(carFromFile, "json.txt");
                     System.out.println(carFromFile.fullInfo());
                     break;
             }
