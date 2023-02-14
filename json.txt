@@ -1,0 +1,1 @@
+{"id":4,"model":"Ford","color":"blue","number":"4321","dateOfAcquirement":"19-11-2002","clientsInCar":[{"id":9,"username":"1","email":"aa","password":"aa","number":"123"},{"id":10,"username":"Nastya","email":"mymail@gmail.com","password":"password","number":"+375299312345"},{"id":12,"username":"aa","email":"2","password":"2","number":"2"}]}

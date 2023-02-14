@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "org/apache/ibatis/builder/xml/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.taxiservices.dao.ICarDAO">
+
+    <sql id="body">
+        c.id as id,
+        c.model as model,
+        c.number as number,
+        c.color as color
+    </sql>
+
+    <select id="getById" resultMap="carResultMap">
+        SELECT
+        <include refid="body"/>
+        FROM
+        taxiservice.cars c
+        WHERE id = #{id}
+    </select>
+
+    <resultMap id="carResultMap" type="com.solvd.taxiservices.models.vehicles.Car" autoMapping="false">
+        <id column="id" property="id"/>
+        <result column="model" property="model"/>
+        <result column="number" property="number"/>
+        <result column="color" property="color"/>
+    </resultMap>
+</mapper>
