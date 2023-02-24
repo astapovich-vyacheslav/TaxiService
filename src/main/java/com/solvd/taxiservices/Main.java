@@ -6,6 +6,7 @@ import com.solvd.taxiservices.models.people.Driver;
 import com.solvd.taxiservices.models.people.Operator;
 import com.solvd.taxiservices.models.vehicles.Car;
 import com.solvd.taxiservices.services.CarDao;
+import com.solvd.taxiservices.services.CarService;
 import com.solvd.taxiservices.services.ClientDao;
 import com.solvd.taxiservices.services.carFactory.CarInfoFactory;
 import com.solvd.taxiservices.services.carFactory.ICarInfo;
@@ -206,7 +207,7 @@ public class Main {
                             System.out.println("enter id");
                             int id = scanner.nextByte();
                             try {
-                            Car carToPrint = carDao.getById(id);
+                            Car carToPrint = CarService.getById(id);
                             System.out.println(carToPrint.toString());
                             CarInfoFactory carInfoFactory = new CarInfoFactory();
                             ICarInfo carInfo = carInfoFactory.getCarInfo(carToPrint.getModel());

@@ -13,7 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarDao implements ICarDao {
+
     private static final SqlSessionFactory SESSION_FACTORY = MyBatisDaoFactory.getSqlSessionFactory();
+    private final SqlSession sqlSession = SESSION_FACTORY.openSession();
+    private final ICarDao iCarDAO = sqlSession.getMapper(ICarDao.class);
 
     @Override
     public ArrayList<Car> getAll() {
@@ -46,14 +49,18 @@ public class CarDao implements ICarDao {
 //        }
 //        return null;
 //    }
+//    @Override
+//    public Car getById(int id) {
+//    Car car;
+//    try(SqlSession sqlSession = SESSION_FACTORY.openSession()) {
+//        ICarDao carDAO = sqlSession.getMapper(ICarDao.class);
+//        car = carDAO.getById(id);
+//    }
+//    return car;
+//    }
     @Override
     public Car getById(int id) {
-    Car car;
-    try(SqlSession sqlSession = SESSION_FACTORY.openSession()) {
-        ICarDao carDAO = sqlSession.getMapper(ICarDao.class);
-        car = carDAO.getById(id);
-    }
-    return car;
+        return iCarDAO.getById(id);
     }
 
     @Override
